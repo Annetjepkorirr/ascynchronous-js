@@ -9,43 +9,56 @@ function message1(message, delay) {
       }, delay);
     });
   }
-  message1("hello I am a student",2000)
+  message1("Hello I am a student",2000)
 
 
 // You have an array of user IDs and a function getUserData(id) that returns a Promise with
 //  user data when given a user ID. Write an asynchronous function that fetches and logs the data 
 //  for each user ID one by one, in sequence.
+function getUserData(id){
+    console.log("user data");
+}
+getUserData()
 
-// const userIds = [1, 2, 3, 4, 5];
+let user=[{}]
+let userID=new Promise((resolve,reject)=>{
+let userID=[
+        "234455677",
+        "457689690",
+        "234790742"
+ ]
+ if(user){
+    return resolve(("id accepted"))
 
-// async function identifyUsersData() {
-//   for (const id of userIds) {
-//     try {
-//       const userData = await getUserData(id);
-//       console.log(userData);
-//     } catch (error) {
-//       console.error(`Error fetching data for user ID ${id}:`, error);
-//     }
-//   }
-// }
-
+ }
+ else{
+    return reject(("id not accepted"))
+ }
+})
+ async function acceptID(){
+    let message=await userID
+    console.log({message})
+ }
+ acceptID()
 // You have an asynchronous function performTask() that returns a Promise. The Promise resolves 
 // if the task is successful and rejects if there's an error. Write a function that calls performTask()
 //  and logs a custom success message if the task is successful, and a custom error message if 
 //  there's an error.
-function performTask() {
-    return new Promise((resolve, reject) => {
-    
-    });
-  }
-  
-  async function giveTask() {
-    try {
-      await performTask();
-      console.log("Task completed successfully!");
-    } catch (error) {
-      console.error("An error occurred:", error);
+function performTask(x){
+    console.log("pass");
+}
+performTask()
+
+let task =[{}]
+let x=new Promise((resolve, reject) => {
+    if (task) {
+        return resolve("custom success message")
+    } else {
+        return reject("custom error message")
     }
-  }
-  
-  giveTask();
+})
+async function messages(){
+    let findMessage = await x
+    console.log({findMessage});
+}
+messages()
